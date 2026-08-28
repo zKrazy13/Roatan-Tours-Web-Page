@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyo's Roatan Tours — Aventuras en el Caribe de Honduras</title>
+<meta name="description" content="Kyo's Roatan Tours: buceo, snorkel, catamarán y aventura en Roatán, Honduras. Reserva tu tour hoy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="script.js"></script>
+</head>
+<body>
+
+<!-- Medidor de profundidad (elemento distintivo) -->
+<div class="depth-gauge" aria-hidden="true">
+  <div class="depth-gauge__track">
+    <div class="depth-gauge__fill" id="depthFill"></div>
+    <div class="depth-gauge__marker" id="depthMarker">🐠</div>
+  </div>
+  <span class="depth-gauge__label" id="depthLabel">0m</span>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container header__row">
+    <a href="#inicio" class="logo">
+      <span class="logo__mark">K</span>
+      <span class="logo__text">Kyo's<em>Roatan Tours</em></span>
+    </a>
+
+    <nav class="nav" id="mainNav">
+      <a href="#inicio" class="nav__link">Inicio</a>
+      <a href="#tours" class="nav__link">Tours</a>
+      <a href="#galeria" class="nav__link">Galería</a>
+      <a href="#nosotros" class="nav__link">Nosotros</a>
+      <a href="#contacto" class="nav__link">Contacto</a>
+    </nav>
+
+    <a href="#contacto" class="btn btn--coral header__cta">Reservar ahora</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+      <svg class="hero__bubbles" viewBox="0 0 400 600" aria-hidden="true">
+        <circle cx="40" cy="520" r="5"/><circle cx="90" cy="470" r="3"/><circle cx="60" cy="410" r="4"/>
+        <circle cx="340" cy="540" r="6"/><circle cx="370" cy="480" r="3"/><circle cx="320" cy="420" r="4"/>
+        <circle cx="200" cy="580" r="3"/>
+      </svg>
+    </div>
+    <div class="container hero__content">
+      <p class="eyebrow">Roatán, Islas de la Bahía · Honduras</p>
+      <h1 class="hero__title">El segundo arrecife<br> más grande del mundo<br> te está esperando.</h1>
+      <p class="hero__subtitle">Buceo, snorkel, catamarán y aventura en la selva — tours locales, guiados por gente de la isla que la conoce de memoria.</p>
+      <div class="hero__actions">
+        <a href="#tours" class="btn btn--coral">Ver catálogo de tours</a>
+        <a href="#contacto" class="btn btn--ghost">Escríbenos por WhatsApp</a>
+      </div>
+      <dl class="hero__stats">
+        <div><dt>+12</dt><dd>años navegando estas aguas</dd></div>
+        <div><dt>25m</dt><dd>de visibilidad promedio</dd></div>
+        <div><dt>4.9★</dt><dd>calificación de viajeros</dd></div>
+      </dl>
+    </div>
+    <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C240,100 480,0 720,40 C960,80 1200,10 1440,50 L1440,100 L0,100 Z"></path>
+    </svg>
+  </section>
+
+  <!-- TOURS -->
+  <section class="section" id="tours">
+    <div class="container">
+      <p class="eyebrow eyebrow--dark">Catálogo</p>
+      <h2 class="section__title">Elige tu profundidad de aventura</h2>
+      <p class="section__intro">Precios de ejemplo por persona en USD. Grupos pequeños, equipo incluido y guías certificados en cada salida.</p>
+
+      <div class="filters" id="tourFilters">
+        <button class="filter-btn is-active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="agua">En el agua</button>
+        <button class="filter-btn" data-filter="tierra">En tierra</button>
+        <button class="filter-btn" data-filter="atardecer">Atardecer</button>
+      </div>
+
+      <div class="tour-grid" id="tourGrid">
+
+        <article class="tour-card" data-category="agua">
+          <div class="tour-card__media tour-card__media--dive"><img class="tour-card__photo" src="img/buceo.jpg" alt="Buceo en el Arrecife" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tour-card__body">
+            <span class="tour-card__tag">Buceo · 2 tanques</span>
+            <h3>Buceo en el Arrecife</h3>
+            <p>Dos inmersiones guiadas en los mejores puntos del arrecife de Roatán, para buzos certificados.</p>
+            <div class="tour-card__meta">
+              <span>⏱ 4 horas</span><span>🤿 Cert. requerida</span>
+            </div>
+          </div>
+          <div class="tour-card__footer">
+            <span class="price"><small>$</small>65<small>/persona</small></span>
+            <a href="#contacto" class="btn btn--small btn--dark">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="agua">
+          <div class="tour-card__media tour-card__media--snorkel"><img class="tour-card__photo" src="img/snorkel.jpg" alt="Snorkel en West Bay" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tour-card__body">
+            <span class="tour-card__tag">Snorkel</span>
+            <h3>Snorkel en West Bay</h3>
+            <p>Aguas poco profundas y cristalinas, ideales para toda la familia. Equipo y flotador incluidos.</p>
+            <div class="tour-card__meta">
+              <span>⏱ 2.5 horas</span><span>👨‍👩‍👧 Todas las edades</span>
+            </div>
+          </div>
+          <div class="tour-card__footer">
+            <span class="price"><small>$</small>35<small>/persona</small></span>
+            <a href="#contacto" class="btn btn--small btn--dark">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="agua">
+          <div class="tour-card__media tour-card__media--dolphin"><img class="tour-card__photo" src="img/delfines.jpg" alt="Encuentro con Delfines" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tour-card__body">
+            <span class="tour-card__tag">Vida marina</span>
+            <h3>Encuentro con Delfines</h3>
+            <p>Nada e interactúa con delfines nariz de botella junto a especialistas en Roatan Institute for Marine Sciences.</p>
+            <div class="tour-card__meta">
+              <span>⏱ 1.5 horas</span><span>📸 Fotos incluidas</span>
+            </div>
+          </div>
+          <div class="tour-card__footer">
+            <span class="price"><small>$</small>90<small>/persona</small></span>
+            <a href="#contacto" class="btn btn--small btn--dark">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="tierra">
+          <div class="tour-card__media tour-card__media--zipline"><img class="tour-card__photo" src="img/canopy.jpg" alt="Canopy y Zipline en la Selva" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tour-card__body">
+            <span class="tour-card__tag">Aventura</span>
+            <h3>Canopy y Zipline en la Selva</h3>
+            <p>Doce líneas sobre el dosel tropical con vistas al Caribe. Incluye transporte desde tu hotel.</p>
+            <div class="tour-card__meta">
+              <span>⏱ 3 horas</span><span>🌳 12 líneas</span>
+            </div>
+          </div>
+          <div class="tour-card__footer">
+            <span class="price"><small>$</small>55<small>/persona</small></span>
+            <a href="#contacto" class="btn btn--small btn--dark">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="tierra">
+          <div class="tour-card__media tour-card__media--island"><img class="tour-card__photo" src="img/tourdw.jpg" alt="Tour Isla y Pueblos" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tour-card__body">
+            <span class="tour-card__tag">Cultura</span>
+            <h3>Tour Isla y Pueblos</h3>
+            <p>Recorrido por Coxen Hole, Sandy Bay y una comunidad garífuna, con parada en mercado local.</p>
+            <div class="tour-card__meta">
+              <span>⏱ 4 horas</span><span>🚐 Transporte incl.</span>
+            </div>
+          </div>
+          <div class="tour-card__footer">
+            <span class="price"><small>$</small>40<small>/persona</small></span>
+            <a href="#contacto" class="btn btn--small btn--dark">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="agua">
+          <div class="tour-card__media tour-card__media--fishing"><img class="tour-card__photo" src="img/pesca.jpg" alt="Pesca de Altura" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tour-card__body">
+            <span class="tour-card__tag">Pesca deportiva</span>
+            <h3>Pesca de Altura</h3>
+            <p>Salida en lancha equipada para dorado, wahoo y marlín. Incluye carnada, hielo y capitán.</p>
+            <div class="tour-card__meta">
+              <span>⏱ Medio día</span><span>🎣 Grupo hasta 4</span>
+            </div>
+          </div>
+          <div class="tour-card__footer">
+            <span class="price"><small>$</small>350<small>/grupo</small></span>
+            <a href="#contacto" class="btn btn--small btn--dark">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="atardecer">
+          <div class="tour-card__media tour-card__media--sail"><img class="tour-card__photo" src="img/catamaran.jpeg" alt="Catamarán al Atardecer" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tour-card__body">
+            <span class="tour-card__tag">Atardecer</span>
+            <h3>Catamarán al Atardecer</h3>
+            <p>Vela relajada frente a la costa con bebida de bienvenida y música en vivo mientras cae el sol.</p>
+            <div class="tour-card__meta">
+              <span>⏱ 2 horas</span><span>🥂 Bebida incluida</span>
+            </div>
+          </div>
+          <div class="tour-card__footer">
+            <span class="price"><small>$</small>50<small>/persona</small></span>
+            <a href="#contacto" class="btn btn--small btn--dark">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tour-card" data-category="agua">
+          <div class="tour-card__media tour-card__media--night"><img class="tour-card__photo" src="img/buceon.jpg" alt="Inmersión Nocturna" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tour-card__body">
+            <span class="tour-card__tag">Buceo nocturno</span>
+            <h3>Inmersión Nocturna</h3>
+            <p>El arrecife cambia por completo de noche. Para buzos con experiencia, linternas incluidas.</p>
+            <div class="tour-card__meta">
+              <span>⏱ 2 horas</span><span>🔦 Linterna incl.</span>
+            </div>
+          </div>
+          <div class="tour-card__footer">
+            <span class="price"><small>$</small>70<small>/persona</small></span>
+            <a href="#contacto" class="btn btn--small btn--dark">Reservar</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section section--dark" id="galeria">
+    <div class="container">
+      <p class="eyebrow">Galería</p>
+      <h2 class="section__title section__title--light">Nuestro trabajo bajo (y sobre) el agua</h2>
+      <p class="section__intro section__intro--light">Siempre trabajando con los mejores.</p>
+
+      <div class="gallery" id="galleryGrid">
+        <button class="gallery__item gallery__item--big" data-caption="Buceo guiado en el arrecife de Roatán" style="--tint:#0F5C5C;--tint2:#29B6A8">
+          <img class="gallery__photo" src="img/galeria-1.jpg" alt="Buceo guiado en el arrecife de Roatán" loading="lazy" onerror="this.style.display='none'">
+          <span class="gallery__label">Foto de ejemplo</span>
+        </button>
+        <button class="gallery__item" data-caption="Grupo listo para salir a snorkel" style="--tint:#0B3B3E;--tint2:#1C8B8A">
+          <img class="gallery__photo" src="img/galeria-2.jpg" alt="Grupo listo para salir a snorkel" loading="lazy" onerror="this.style.display='none'">
+          <span class="gallery__label">Foto de ejemplo</span>
+        </button>
+        <button class="gallery__item" data-caption="Atardecer visto desde el catamarán" style="--tint:#7A3B22;--tint2:#FF6F4E">
+          <img class="gallery__photo" src="img/galeria-3.jpg" alt="Atardecer visto desde el catamarán" loading="lazy" onerror="this.style.display='none'">
+          <span class="gallery__label">Foto de ejemplo</span>
+        </button>
+        <button class="gallery__item" data-caption="Delfín nariz de botella en el instituto marino" style="--tint:#0A2E36;--tint2:#4FC3BE">
+          <img class="gallery__photo" src="img/galeria-4.jpg" alt="Delfín nariz de botella en el instituto marino" loading="lazy" onerror="this.style.display='none'">
+          <span class="gallery__label">Foto de ejemplo</span>
+        </button>
+        <button class="gallery__item" data-caption="Zipline sobre la selva tropical" style="--tint:#274A1F;--tint2:#8FBF5A">
+          <img class="gallery__photo" src="img/galeria-5.jpg" alt="Zipline sobre la selva tropical" loading="lazy" onerror="this.style.display='none'">
+          <span class="gallery__label">Foto de ejemplo</span>
+        </button>
+        <button class="gallery__item gallery__item--big" data-caption="Vista aérea de West Bay, Roatán" style="--tint:#0D2B2E;--tint2:#E8B84B">
+          <img class="gallery__photo" src="img/galeria-6.jpg" alt="Vista aérea de West Bay, Roatán" loading="lazy" onerror="this.style.display='none'">
+          <span class="gallery__label">Foto de ejemplo</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section class="section" id="nosotros">
+    <div class="container about">
+      <div class="about__media" aria-hidden="true">
+        <div class="about__photo">Foto del equipo<br><small>(ejemplo)</small></div>
+        <div class="about__badge">
+          <strong>+12</strong>
+          <span>años en la isla</span>
+        </div>
+      </div>
+      <div class="about__text">
+        <p class="eyebrow eyebrow--dark">Nosotros</p>
+        <h2 class="section__title">Nacimos en Roatán y navegamos sus aguas todos los días</h2>
+        <p>Kyo's Roatan Tours es una operadora local fundada por familias de la isla. Empezamos con un solo bote y la idea de mostrarles a los visitantes el Roatán que nosotros conocemos: el arrecife, los pueblos garífuna, los atardeceres desde el agua.</p>
+        <p>Hoy trabajamos con guías certificados PADI, capitanes con licencia y un equipo local que cuida cada detalle, desde el equipo de buceo hasta la lonchera para el viaje.</p>
+        <ul class="about__list">
+          <li>Guías y capitanes con licencia local</li>
+          <li>Grupos pequeños, atención personalizada</li>
+          <li>Equipo de buceo y snorkel revisado antes de cada salida</li>
+          <li>Comprometidos con la conservación del arrecife</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section section--sand" id="contacto">
+    <div class="container contact">
+      <div class="contact__info">
+        <p class="eyebrow eyebrow--dark">Contacto</p>
+        <h2 class="section__title">Planeemos tu próxima salida</h2>
+        <p class="section__intro">Escríbenos y te respondemos con disponibilidad, horarios de recogida y opciones para tu grupo.</p>
+
+        <ul class="contact__list">
+          <li>
+            <span class="contact__icon">📍</span>
+            <div><strong>Ubicación</strong><br>Muelle Kyo's, French Cay, Roatán, Islas de la Bahía, Honduras</div>
+          </li>
+          <li>
+            <span class="contact__icon">📞</span>
+            <div><strong>Teléfono / WhatsApp</strong><br>+504 9999-0000</div>
+          </li>
+          <li>
+            <span class="contact__icon">✉️</span>
+            <div><strong>Correo</strong><br>reservas@kyosroatantours.com</div>
+          </li>
+          <li>
+            <span class="contact__icon">🕗</span>
+            <div><strong>Horario</strong><br>Todos los días, 7:00 a.m. – 6:00 p.m.</div>
+          </li>
+        </ul>
+
+        <div class="contact__social">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="WhatsApp">WhatsApp</a>
+        </div>
+      </div>
+
+      <form class="contact__form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+          <span class="field__error" id="err-name"></span>
+        </div>
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+          <span class="field__error" id="err-email"></span>
+        </div>
+        <div class="field">
+          <label for="tour">Tour de interés</label>
+          <select id="tour" name="tour">
+            <option value="">Selecciona una opción</option>
+            <option>Buceo en el Arrecife</option>
+            <option>Snorkel en West Bay</option>
+            <option>Encuentro con Delfines</option>
+            <option>Canopy y Zipline</option>
+            <option>Tour Isla y Pueblos</option>
+            <option>Pesca de Altura</option>
+            <option>Catamarán al Atardecer</option>
+            <option>Inmersión Nocturna</option>
+            <option>Aún no estoy seguro/a</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="4" placeholder="Cuéntanos las fechas y cuántas personas van" required></textarea>
+          <span class="field__error" id="err-message"></span>
+        </div>
+        <button type="submit" class="btn btn--coral btn--full">Enviar mensaje</button>
+        <p class="contact__success" id="formSuccess" hidden>¡Gracias! Tu mensaje fue enviado. Te responderemos muy pronto.</p>
+      </form>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        title="Mapa de Roatán, Honduras"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-86.6%2C16.28%2C-86.35%2C16.42&layer=mapnik"
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__row">
+    <a href="#inicio" class="logo logo--footer">
+      <span class="logo__mark">K</span>
+      <span class="logo__text">Kyo's<em>Roatan Tours</em></span>
+    </a>
+    <p>© <span id="year"></span> Kyo's Roatan Tours. Sitio de ejemplo — Roatán, Honduras.</p>
+    <nav class="footer__nav">
+      <a href="#tours">Tours</a>
+      <a href="#galeria">Galería</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Lightbox de galería -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">✕</button>
+  <div class="lightbox__panel">
+    <div class="lightbox__media" id="lightboxMedia"></div>
+    <p class="lightbox__caption" id="lightboxCaption"></p>
+  </div>
+</div>
+
+</body>
+</html>
